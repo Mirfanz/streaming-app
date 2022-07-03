@@ -1,0 +1,212 @@
+/* @font-face {
+  font-family: carterOne;
+  src: url(/assets/font/CarterOne-Regular.ttf);
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Thin.ttf);
+  font-weight: 100;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-ExtraLight.ttf);
+  font-weight: 200;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-ExtraBolt.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "outfit";
+  src: url(/assets/font/Outfit/static/Outfit-Black.ttf);
+  font-weight: 900;
+} */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  overflow-x: hidden;
+  font-family: "outfit";
+  padding-bottom: 3.5rem;
+}
+.disclaimer {
+  display: none;
+}
+.container {
+}
+label.required::after {
+  content: "*";
+  color: #f1be5f;
+  /* color: green; */
+}
+.bx {
+  /* transform: translateY(.1); */
+}
+.btn-search i {
+  transition: 100ms;
+}
+.btn-search:not(.collapsed) i {
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: inset 2px 2px 3px rgb(150, 150, 150);
+}
+.navbar {
+}
+.navbar-brand {
+  font-weight: 900 !important;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 0 !important;
+}
+.navbar-nav {
+}
+.nav-item {
+  margin-block: auto;
+}
+.nav-link {
+  padding-block: 3px;
+  width: max-content;
+}
+.nav-link.active {
+  border-radius: 5px;
+  padding-inline: 5px;
+  margin-inline: 5px;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid var(--bs-primary);
+  color: var(--bs-primary) !important;
+}
+
+.nav-link:not(.active) .text {
+  display: none;
+}
+.nav-link:not(.active) {
+  width: 2.5em;
+  text-align: center;
+}
+.nav-link:not(.active):where(:hover, :active) {
+  color: var(--bs-primary) !important;
+}
+@media only screen and (max-width: 768px) {
+  .navbar-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    background-color: white !important;
+    padding-block: 10px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-shadow: 0 0 4px lightgrey;
+    transition: 500ms;
+    border-radius: 10px 10px 0 0 ;
+  }
+  nav.navbar {
+  }
+  nav.hide .navbar-nav {
+    bottom: -4em !important;
+  }
+  .nav-item {
+    text-align: center;
+  }
+  .nav-link {
+    margin: 0;
+    text-align: center;
+  }
+  .nav-link.active {
+    padding: 5px 1rem;
+    box-sizing: border-box;
+  }
+
+  .toast-container {
+    bottom: unset;
+    top: 4.5rem;
+  }
+  .toast {
+    margin-block: 5px !important;
+  }
+}
+
+/* =======================================================================================
+    Template
+======================================================================================= */
+
+.ratio-same {
+  aspect-ratio: 1/1 !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-to-top {
+  border-radius: 10%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  position: absolute;
+  bottom: -5rem;
+  transition: 500ms;
+  right: 1rem;
+  opacity: 0;
+}
+
+.btn-to-top.show {
+  z-index: 10000;
+  bottom: 4rem;
+  opacity: 1;
+  animation: anim-btn-to-top 500ms 300ms infinite alternate;
+}
+@keyframes anim-btn-to-top {
+  to {
+    transform: translate(0, -1rem);
+  }
+}
+
+.btn-to-top:hover {
+  color: white;
+}
+
+.swal-button {
+  position: relative;
+  transition: 60ms !important;
+  padding: 7px 15px;
+}
+.swal-button.swal-button--confirm {
+  background-color: var(--bs-primary) !important;
+}
+.swal-button:hover {
+  filter: brightness(0.9);
+}
+.swal-button:active {
+  transform: scale(0.9);
+}
