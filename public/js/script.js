@@ -74,7 +74,7 @@ if (navigator.connection)
       navSearch.toggle();
     }
   };
-  navSearch.addEventListener("collapse.bs.shown", () => {
-    inpSearch.focus();
-  });
+  // navSearch.addEventListener("collapse.bs.shown", () => {
+  //   inpSearch.focus();
+  // });
 })();
