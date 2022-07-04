@@ -1,5 +1,4 @@
 const toastContainer = document.querySelector(".toast-container");
-const APP_NAME = "Fandev";
 function showToast(data = {}) {
   if (!data.body) return;
   const elem = document.createElement("div");
@@ -20,16 +19,6 @@ function showToast(data = {}) {
   const toast = new bootstrap.Toast(elem);
   elem.addEventListener("hidden.bs.toast", () => elem.remove());
   toast.show();
-}
-function errLogin() {
-  swal({
-    title: "Mohon Maaf!",
-    text: "Silahkan login terlebih dahulu",
-    buttons: ["Close", "Login"],
-    icon: "error",
-  }).then((e) => {
-    if (e) document.location.href = "/login";
-  });
 }
 
 function errFitur() {
@@ -63,9 +52,29 @@ if (navigator.connection)
     else btnToTop.classList.remove("show");
     oldY = newY;
   };
-  const btnLogout = document.querySelector("#btnLogout");
-  if (btnLogout)
-    btnLogout.onclick = (e) => {
-      if (!confirm("Apakah anda yakin ingin logout akun?")) return false;
-    };
+})();
+
+(function () {
+  const navSearch = new bootstrap.Collapse("#navsearch");
+  const inpSearch = document.querySelector(".input-search");
+  const btnSearch = document.querySelector(".btn-search");
+  inpSearch.onfocus = callback;
+  inpSearch.oninput = callback;
+  function callback(e) {
+    if (inpSearch.value !== "") {
+      btnSearch.setAttribute("type", "submit");
+      btnSearch.classList.replace("text-light", "text-primary");
+    } else {
+      btnSearch.setAttribute("type", "button");
+      btnSearch.classList.replace("text-primary", "text-light");
+    }
+  }
+  btnSearch.onclick = (e) => {
+    if (btnSearch.getAttribute("type") !== "submit") {
+      navSearch.toggle();
+    }
+  };
+  navSearch.addEventListener("collapse.bs.shown", () => {
+    inpSearch.focus();
+  });
 })();
