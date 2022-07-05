@@ -60,25 +60,25 @@ use CodeIgniter\Database\BaseUtils;
           <li class="nav-item">
             <a class="nav-link <?= $page==='home'? 'active': ''; ?>" href="<?= base_url(); ?>">
               <i class="bx bxs-home"></i>
-              <span class="text"> Home</span>
+              <span class="text">Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='latest'? 'active': ''; ?>" href="<?= base_url(); ?>">
+            <a class="nav-link <?= $page==='latest'? 'active': ''; ?>" href="<?= base_url('/latest'); ?>">
               <i class="bx bxs-calendar"></i>
-              <span class="text"> Latest</span>
+              <span class="text">Latest</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?= $page==='trending'? 'active': ''; ?>" href="<?= base_url(); ?>">
               <i class="bx bxs-trophy"></i>
-              <span class="text"> Trending</span>
+              <span class="text">Trending</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url(); ?>">
               <i class="bx bxs-user"></i>
-              <span class="text"> User</span>
+              <span class="text">User</span>
             </a>
           </li>
         </ul>
