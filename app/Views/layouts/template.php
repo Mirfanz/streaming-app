@@ -52,7 +52,7 @@ use CodeIgniter\Database\BaseUtils;
         </div> -->
         <form class="d-flex gap-1 align-items-center nav-search" action="<?= base_url('/search'); ?>" role="search">
           <div class="collapse collapse-horizontal" id="navsearch">
-            <input type="text" class="bg-transparent text-light border-0 input-search" style="outline: none" name="q" required placeholder="Cari Film" value="<?= isset($key)?$key:''; ?>" />
+            <input type="text" class="bg-transparent text-light border-0 input-search" style="outline: none" name="query" required placeholder="Cari Film" value="<?= isset($key)?$key:''; ?>" />
           </div>
           <button class="text-light bg-transparent border-0 btn-search" type="button"><i class="bx bx-search-alt"></i></button>
         </form>
@@ -64,9 +64,9 @@ use CodeIgniter\Database\BaseUtils;
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='latest'? 'active': ''; ?>" href="<?= base_url('/latest'); ?>">
-              <i class="bx bxs-calendar"></i>
-              <span class="text">Latest</span>
+            <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url('/search'); ?>">
+              <i class="bx bxs-search"></i>
+              <span class="text">Search</span>
             </a>
           </li>
           <li class="nav-item">
@@ -76,7 +76,7 @@ use CodeIgniter\Database\BaseUtils;
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url(); ?>">
+            <a class="nav-link <?= $page==='user'? 'active': ''; ?>" href="<?= base_url(); ?>">
               <i class="bx bxs-user"></i>
               <span class="text">User</span>
             </a>
