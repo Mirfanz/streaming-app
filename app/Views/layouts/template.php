@@ -59,26 +59,26 @@ use CodeIgniter\Database\BaseUtils;
         <ul class="navbar-nav gap-1">
           <li class="nav-item">
             <a class="nav-link <?= $page==='home'? 'active': ''; ?>" href="<?= base_url(); ?>">
-              <i class="bx <?= $page==='search'? 'bx-home': 'bxs-home'; ?>"></i>
+              <i class="bx bxs-home"></i>
               <span class="text"> Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url(); ?>">
-              <i class="bx bxs-bookmarks"></i>
-              <span class="text"> Search</span>
+            <a class="nav-link <?= $page==='latest'? 'active': ''; ?>" href="<?= base_url(); ?>">
+              <i class="bx bxs-calendar"></i>
+              <span class="text"> Latest</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?= $page==='trending'? 'active': ''; ?>" href="<?= base_url(); ?>">
+              <i class="bx bxs-trophy"></i>
+              <span class="text"> Trending</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url(); ?>">
-              <i class="bx bxs-heart"></i>
-              <span class="text"> Search</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url(); ?>">
-              <i class="bx bxs-time-five"></i>
-              <span class="text"> Search</span>
+              <i class="bx bxs-user"></i>
+              <span class="text"> User</span>
             </a>
           </li>
         </ul>
