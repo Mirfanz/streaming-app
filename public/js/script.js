@@ -1,3 +1,5 @@
+const API_KEY = "b09f6746c93655e204f3fd4a84329b07";
+const API_URL = "https://api.themoviedb.org/3/";
 const toastContainer = document.querySelector(".toast-container");
 function showToast(data = {}) {
   if (!data.body) return;
