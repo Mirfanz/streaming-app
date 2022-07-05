@@ -13,7 +13,7 @@
   }
   @media only screen and (max-width: 576px) {
     .results .card {
-      width: 45%;
+      width: calc(50% - 0.5rem);
     }
   }
 </style>
