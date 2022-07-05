@@ -49,6 +49,9 @@
   }
 
   /* ================================ */
+  .h-swiper{
+    overflow: visible;
+  }
   .h-swiper .swiper-slide {
     width: 130px;
     background-color: var(--secondary) !important;
@@ -90,7 +93,7 @@
     <button class="slide-prev"><i class="bx bxs-chevrons-left"></i></button>
   </div>
 
-  <div class="my-3">
+  <div class="my-4">
     <div class="d-flex">
       <h4>Most Popular</h4>
       <a href="#" class="ms-auto">show all</a>
@@ -108,13 +111,13 @@
       </div>
     </div>
   </div>
-  <div class="my-3">
+  <div class="my-4">
     <div class="d-flex">
-      <h4>Upcoming</h4>
+      <h4>Top Rated</h4>
       <a href="#" class="ms-auto">show all</a>
     </div>
     <div class="swiper h-swiper">
-      <div class="swiper-wrapper upcoming">
+      <div class="swiper-wrapper top-rated">
         <?php for($i = 0 ; $i < 10; $i++): ?>
         <div class="swiper-slide card">
           <img class="placeholder placeholder-wave" />
@@ -158,7 +161,7 @@
   });
   $.ajax({
     type: "get",
-    url: `${API_URL}movie/upcoming?api_key=${API_KEY}&page=1&language=id-ID`,
+    url: `${API_URL}movie/top_rated?api_key=${API_KEY}&page=1&language=id-ID`,
     success: function (resp) {
       let movies = "";
       resp = resp.results;
@@ -172,7 +175,7 @@
           </div>
         </div>`;
       }
-      document.querySelector(".upcoming").innerHTML = movies;
+      document.querySelector(".top-rated").innerHTML = movies;
     },
   });
   $.ajax({
