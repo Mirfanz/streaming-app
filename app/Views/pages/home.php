@@ -49,7 +49,7 @@
   }
 
   /* ================================ */
-  .h-swiper{
+  .h-swiper {
     overflow: visible;
   }
   .h-swiper .swiper-slide {
@@ -57,6 +57,7 @@
     background-color: var(--secondary) !important;
     border-radius: 5px;
     overflow: hidden;
+    text-decoration: none;
   }
   .h-swiper .swiper-slide img {
     width: 100%;
@@ -96,7 +97,7 @@
   <div class="my-4">
     <div class="d-flex">
       <h4>Most Popular</h4>
-      <a href="#" class="ms-auto">show all</a>
+      <a href="<?= base_url('/popular'); ?>" class="ms-auto">show all</a>
     </div>
     <div class="swiper h-swiper">
       <div class="swiper-wrapper popular">
@@ -104,7 +105,10 @@
         <div class="swiper-slide card">
           <img class="placeholder placeholder-wave" />
           <div class="card-body py-1 px-2 bg-dark placeholder placeholder-wave">
-            <h6 class="m-0 placeholder placeholder-wave col-12"></h6>
+            <h6 class="m-0">
+              <span class="placeholder-glow placeholder col-12"></span>
+              <span class="placeholder-glow placeholder col-8"></span>
+            </h6>
           </div>
         </div>
         <?php endfor; ?>
@@ -114,7 +118,7 @@
   <div class="my-4">
     <div class="d-flex">
       <h4>Top Rated</h4>
-      <a href="#" class="ms-auto">show all</a>
+      <a href="<?= base_url('/top-rated'); ?>" class="ms-auto">show all</a>
     </div>
     <div class="swiper h-swiper">
       <div class="swiper-wrapper top-rated">
@@ -122,7 +126,10 @@
         <div class="swiper-slide card">
           <img class="placeholder placeholder-wave" />
           <div class="card-body py-1 px-2 bg-dark placeholder placeholder-wave">
-            <h6 class="m-0 placeholder placeholder-wave col-12"></h6>
+            <h6 class="m-0">
+              <span class="placeholder-glow placeholder col-12"></span>
+              <span class="placeholder-glow placeholder col-8"></span>
+            </h6>
           </div>
         </div>
         <?php endfor; ?>
@@ -149,16 +156,17 @@
       for (let i = 0; i < resp.length; i++) {
         if (i > 9) break;
         movies += `
-        <div class="swiper-slide card">
+        <a href="<?= base_url("/detail-movie"); ?>/${resp[i].id}" class="swiper-slide card">
           <img src="${"https://image.tmdb.org/t/p/w500/" + resp[i].poster_path}" loading="lazy" alt="${resp[i].title}" />
           <div class="card-body py-1 px-2 bg-dark">
             <h6 class="m-0" style="height:2.5em;overflow:hidden">${resp[i].title}</h6>
           </div>
-        </div>`;
+        </a>`;
       }
       document.querySelector(".popular").innerHTML = movies;
     },
   });
+  
   $.ajax({
     type: "get",
     url: `${API_URL}movie/top_rated?api_key=${API_KEY}&page=1&language=id-ID`,
@@ -168,12 +176,12 @@
       for (let i = 0; i < resp.length; i++) {
         if (i > 9) break;
         movies += `
-        <div class="swiper-slide card">
+        <a href="<?= base_url("/detail-movie"); ?>/${resp[i].id}" class="swiper-slide card">
           <img src="${"https://image.tmdb.org/t/p/w500/" + resp[i].poster_path}" loading="lazy" alt="${resp[i].title}" />
           <div class="card-body py-1 px-2 bg-dark">
             <h6 class="m-0" style="height:2.5em;overflow:hidden">${resp[i].title}</h6>
           </div>
-        </div>`;
+        </a>`;
       }
       document.querySelector(".top-rated").innerHTML = movies;
     },

@@ -19,10 +19,8 @@
   }
 </style>
 <?= $this->endSection() ;?>
-
 <?= $this->section('content') ;?>
-<div class="container-fluid">
-  <div class="text-success bg-success bg-opacity-10 p-2 px-3 m-3 rounded" style="border: 1px solid">obtained <span class="total-result">0</span> movies from keyword "<?= $query; ?>"</div>
+<div class="container-fluid pt-2">
   <div class="d-flex flex-wrap gap-1 justify-content-center results">
     <?php for($i = 0 ; $i < 10; $i++): ?>
     <div class="card p-0">
@@ -40,9 +38,7 @@
     <button class="btn btn-primary mx-auto btn-load-more">Load More</button>
   </div>
 </div>
-
 <?= $this->endSection() ;?>
-
 <?= $this->section('script') ;?>
 <script>
   let totPages,
@@ -51,16 +47,16 @@
   const results = document.querySelector(".results");
   const btnLoadMore = document.querySelector(".btn-load-more");
   function getResult(e) {
-    // if (curPage >= totPages) return btnLoadMore.remove();
     $.ajax({
       type: "get",
-      url: `${API_URL}search/movie?api_key=${API_KEY}&query=<?= $query; ?>&page=${curPage + 1}`,
+      url: `${API_URL}movie/top_rated?api_key=${API_KEY}&query=<?= $query; ?>&page=${curPage + 1}`,
       success: function (resp) {
+        console.log(resp);
         curPage = resp.page;
         totPages = resp.total_pages;
         totResults = resp.total_results;
-        console.log(curPage, totPages);
         if (curPage === 1) results.innerHTML = "";
+        $(".total-result");
         resp = resp.results;
         resp.forEach((movie) => {
           const elem = document.createElement("a");
@@ -73,7 +69,6 @@
           </div>`;
           results.appendChild(elem);
         });
-        document.querySelector(".total-result").innerHTML = totResults;
         if (curPage >= totPages) return btnLoadMore.remove();
       },
     });

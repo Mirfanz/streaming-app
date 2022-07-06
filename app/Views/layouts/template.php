@@ -70,19 +70,19 @@ use CodeIgniter\Database\BaseUtils;
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='top-rate'? 'active': ''; ?>" href="<?= base_url(); ?>">
+            <a class="nav-link <?= $page==='top-rated'? 'active': ''; ?>" href="<?= base_url('/top-rated'); ?>">
               <i class="bx bx-medal"></i>
               <span class="text">Top</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='trending'? 'active': ''; ?>" href="<?= base_url(); ?>">
+            <a class="nav-link <?= $page==='popular'? 'active': ''; ?>" href="<?= base_url('/popular'); ?>">
               <i class="bx bxs-trophy"></i>
               <span class="text">Popular</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $page==='user'? 'active': ''; ?>" href="<?= base_url(); ?>">
+            <a class="nav-link <?= $page==='user'? 'active': ''; ?>" href="#">
               <i class="bx bxs-user"></i>
               <span class="text">User</span>
             </a>
@@ -94,7 +94,7 @@ use CodeIgniter\Database\BaseUtils;
     <?= $this->renderSection('content') ;?>
 
     <div class="container position-fixed bg-black bottom-0 end-0 start-0" style="z-index: 10000; overflow: visible !important">
-      <a href="#" class="btn-to-top"><i class="bx bxs-arrow-to-top"></i></a>
+      <a href="#" class="btn-to-top"><i class="bx bxs-chevrons-up"></i></a>
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 pb-3 px-3"></div>
 

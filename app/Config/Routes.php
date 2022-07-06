@@ -33,6 +33,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/search', 'Search::index');
+$routes->get('/top-rated', 'Rating::index');
+$routes->get('/popular', 'Popular::index');
+
+$routes->get('/detail-movie/(:num)', 'Detail::movie/$1');
+
 $routes->get('/cronjob', 'Cronjob::harian');
 
 /*
