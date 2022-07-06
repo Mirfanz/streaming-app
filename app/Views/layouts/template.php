@@ -65,14 +65,20 @@ use CodeIgniter\Database\BaseUtils;
           </li>
           <li class="nav-item">
             <a class="nav-link <?= $page==='search'? 'active': ''; ?>" href="<?= base_url('/search'); ?>">
-              <i class="bx bxs-search"></i>
+              <i class="bx bx-search-alt"></i>
               <span class="text">Search</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?= $page==='top-rate'? 'active': ''; ?>" href="<?= base_url(); ?>">
+              <i class="bx bx-medal"></i>
+              <span class="text">Top</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?= $page==='trending'? 'active': ''; ?>" href="<?= base_url(); ?>">
               <i class="bx bxs-trophy"></i>
-              <span class="text">Trending</span>
+              <span class="text">Popular</span>
             </a>
           </li>
           <li class="nav-item">
