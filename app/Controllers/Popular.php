@@ -8,7 +8,7 @@ class Popular extends BaseController
   {
     $data = [
       'page'=>'popular',
-      'title'=>'Popular Movies',
+      'title'=>'Popular Movies | FanDev',
     ];
     return view('pages/popular',$data);
   }

@@ -8,6 +8,8 @@ class Detail extends BaseController
   {
     $data = [
       'id'=>$id,
+      'title'=> 'Movie Detail | Fandev',
+      'page' => 'e'
     ];
     return view('pages/detail-movie', $data);
   }

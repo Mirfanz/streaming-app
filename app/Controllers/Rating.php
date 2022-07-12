@@ -8,7 +8,7 @@ class Rating extends BaseController
   {
     $data = [
       'page'=>'top-rated',
-      'title'=>'Top Movies',
+      'title'=>'Top Movies | FanDev',
     ];
     return view('pages/top-rated',$data);
   }

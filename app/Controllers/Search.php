@@ -7,7 +7,7 @@ class SEarch extends BaseController
   {
     $data = [
       'page'=> 'search',
-      'title'=>'Search Movie',
+      'title'=>'Search Movie | Fandev',
       'query'=>$this->request->getGet('query'),
     ];
     return view('pages/search',$data);
