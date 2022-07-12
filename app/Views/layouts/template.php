@@ -8,21 +8,23 @@ use CodeIgniter\Database\BaseUtils;
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="<?= base_url('/library/boxicons/css/boxicons.min.css'); ?>" />
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="<?= base_url('/library/bootstrap/dist/css/bootstrap.min.css'); ?>" /> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
-    
+    <?php if($_SERVER['CI_ENVIRONMENT']=='production'): ?>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <?php else: ?>
+      <link rel="stylesheet" href="<?= base_url('/library/boxicons/css/boxicons.min.css'); ?>" />
+      <link rel="stylesheet" href="<?= base_url('/library/bootstrap/dist/css/bootstrap.min.css'); ?>" />
+      <link rel="stylesheet" href="<?= base_url('/css/fonts.css'); ?>">
+    <?php endif; ?>
     <link rel="stylesheet" href="<?= base_url('/library/swiperjs/swiper.css'); ?>" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="<?= base_url('/css/style.css'); ?>" />
     <link rel="shortcut icon" href="<?= base_url('favicon.ico'); ?>" type="image/x-icon" />
     <?= $this->
     renderSection('head') ;?>
-    <title><?= $title; ?></title>
+    <title><?= isset($title)?$title:'FanDev'; ?></title>
   </head>
 
   <body>
@@ -101,10 +103,13 @@ use CodeIgniter\Database\BaseUtils;
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 pb-3 px-3"></div>
 
+    <?php if($_SERVER['CI_ENVIRONMENT']=='production'): ?>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <?php else: ?>  
+      <script src="<?= base_url('/library/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+    <?php endif; ?>
     <script src="<?= base_url('/library/swiperjs/swiper.js'); ?>"></script>
     <script src="<?= base_url('/library/sweetalert/sweetalert.js'); ?>"></script>
-    <!-- <script src="<?= base_url('/library/bootstrap/dist/js/bootstrap.min.js'); ?>"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url('/library/jquery/jquery.js'); ?>"></script>
     <script src="<?= base_url('/js/script.js'); ?>"></script>
 
