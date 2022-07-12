@@ -24,7 +24,7 @@
 <div class="container-fluid">
   <div class="text-success bg-success bg-opacity-10 p-2 px-3 m-3 rounded" style="border: 1px solid">obtained <span class="total-result">0</span> movies from keyword "<?= $query; ?>"</div>
   <div class="d-flex flex-wrap gap-1 justify-content-center results">
-    <?php for($i = 0 ; $i < 10; $i++): ?>
+    <?php for($i = 0 ; $i < 20; $i++): ?>
     <div class="card p-0">
       <img class="placeholder placeholder-wave" />
       <div class="card-body py-1 px-2 bg-dark placeholder placeholder-wave">

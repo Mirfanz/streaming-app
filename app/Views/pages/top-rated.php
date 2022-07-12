@@ -19,10 +19,10 @@
   }
 </style>
 <?= $this->endSection() ;?>
-<?= $this->section('content') ;?>
+<?= $this->section('content');?>
 <div class="container-fluid pt-2">
   <div class="d-flex flex-wrap gap-1 justify-content-center results">
-    <?php for($i = 0 ; $i < 10; $i++): ?>
+    <?php for($i = 0 ; $i < 20; $i++): ?>
     <div class="card p-0">
       <img class="placeholder placeholder-wave" />
       <div class="card-body py-1 px-2 bg-dark placeholder placeholder-wave">
