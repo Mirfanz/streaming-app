@@ -49,7 +49,7 @@
   function getResult(e) {
     $.ajax({
       type: "get",
-      url: `${API_URL}movie/top_rated?api_key=${API_KEY}&query=<?= $query; ?>&page=${curPage + 1}`,
+      url: `${API_URL}movie/top_rated?api_key=${API_KEY}&page=${curPage + 1}`,
       success: function (resp) {
         console.log(resp);
         curPage = resp.page;
