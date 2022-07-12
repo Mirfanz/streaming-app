@@ -71,10 +71,10 @@
   <div class="swiper carousel-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="/assets/img/glass_movie.jpg" alt="" />
+        <img src="<?= base_url('/assets/img/glass_movie.jpg'); ?>" alt="" />
       </div>
       <div class="swiper-slide">
-        <img src="/assets/img/inception_movie.jpg" alt="" />
+        <img src="<?= base_url('/assets/img/inception_movie.jpg'); ?>" alt="" />
       </div>
       <div class="swiper-slide">
         <img src="https://image.tmdb.org/t/p/w500/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg" alt="" />
